@@ -3,6 +3,7 @@
 @class MenuViewController;
 
 @interface LifeViewController : UIViewController {
+    int evolveStyle;
     float evolveInterval;
     bool isMenuOpen;  
     
@@ -33,6 +34,7 @@
     MenuViewController * menuViewController;
 }
 
+@property int evolveStyle;
 @property float evolveInterval;
 @property bool isMenuOpen;
 

@@ -17,7 +17,7 @@
         }
     }
     
-    //Cell inside
+    //Cell inside - line:j colum;i
     for (int i = 1; i <= CELL_HMAX-2; i++) {
         for (int j = 1; j <= CELL_VMAX-2; j++) {
             if (cell[i][j] != nil) {
@@ -33,76 +33,171 @@
         }
     }
     
-    //Cell left right side
+    //Cell updown side
     {
-        int j;
+        int j,jj;
         for (int i = 1; i <= CELL_HMAX-2; i++) {
             j = 0;
             if (cell[i][j] != nil) {
                 tempNeighbour[i][j+1]++;
                 tempNeighbour[i-1][j+1]++;
                 tempNeighbour[i+1][j+1]++;
+                tempNeighbour[i-1][j]++;
+                tempNeighbour[i+1][j]++;
+                
+                if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner2){
+                    jj = CELL_VMAX-1;                   
+                    tempNeighbour[i][jj]++;
+                    tempNeighbour[i-1][jj]++;
+                    tempNeighbour[i+1][jj]++;
+                }
             }
+            
             j = CELL_VMAX-1;
             if (cell[i][j] != nil) {
                 tempNeighbour[i][j-1]++;
                 tempNeighbour[i-1][j-1]++;
-                tempNeighbour[i+1][j-1]++;
+                tempNeighbour[i+1][j-1]++;  
+                tempNeighbour[i-1][j]++;
+                tempNeighbour[i+1][j]++;     
+                
+                if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner2){
+                    jj = 0;
+                    tempNeighbour[i][jj]++;
+                    tempNeighbour[i-1][jj]++;
+                    tempNeighbour[i+1][jj]++;
+                }
             }
+            
         }
     }
     
-    //Cell up down side
+    //Cell leftright side
     {
-        int i;
+        int i,ii;
         for (int j = 1; j <= CELL_VMAX-2; j++) {
             i = 0;
             if (cell[i][j] != nil) {
                 tempNeighbour[i+1][j]++;
                 tempNeighbour[i+1][j+1]++;
                 tempNeighbour[i+1][j-1]++;
+                tempNeighbour[i][j+1]++;
+                tempNeighbour[i][j-1]++; 
+                
+                if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner){
+                    ii = CELL_HMAX - 1;
+                    tempNeighbour[ii][j]++;
+                    tempNeighbour[ii][j+1]++;
+                    tempNeighbour[ii][j-1]++;
+                }
             }
-            i = CELL_HMAX-1;
+            
+            i = CELL_HMAX - 1;
             if (cell[i][j] != nil) {
                 tempNeighbour[i-1][j]++;
                 tempNeighbour[i-1][j+1]++;
                 tempNeighbour[i-1][j-1]++;
+                tempNeighbour[i][j+1]++;
+                tempNeighbour[i][j-1]++;                
+                
+                if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner){
+                    ii = 0;
+                    tempNeighbour[ii][j]++;
+                    tempNeighbour[ii][j+1]++;
+                    tempNeighbour[ii][j-1]++;
+                }
             }
         }
     }
     
     //Cell at 4 corner
     {
+        // up left
         int i = 0;
         int j = 0;
+        int ii = CELL_HMAX-1;
+        int jj = CELL_VMAX-1;
         if(cell[i][j] != nil){
             tempNeighbour[i][j+1]++;
             tempNeighbour[i+1][j]++;
             tempNeighbour[i+1][j+1]++;
+            if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner){
+                tempNeighbour[ii][j]++;
+                tempNeighbour[ii][j+1]++;
+            }
+            if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner2){
+                tempNeighbour[i][jj]++;
+                tempNeighbour[i+1][jj]++;
+            }
+            if(superViewController.evolveStyle == silverBessel){
+                tempNeighbour[ii][jj]++;
+            }
         }
         
+        //down left
         i = 0;
         j = CELL_VMAX-1;
+        ii = CELL_HMAX-1;
+        jj = 0;
         if(cell[i][j] != nil){
             tempNeighbour[i][j-1]++;
             tempNeighbour[i+1][j]++;
             tempNeighbour[i+1][j-1]++;
+            if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner){
+                tempNeighbour[ii][j]++;
+                tempNeighbour[ii][j-1]++;
+            }
+            if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner2){
+                tempNeighbour[i][jj]++;
+                tempNeighbour[i+1][jj]++;
+            }
+            if(superViewController.evolveStyle == silverBessel){
+                tempNeighbour[ii][jj]++;
+            }
         }
         
+        //down right
         i = CELL_HMAX-1;
         j = CELL_VMAX-1;
+        ii = 0;
+        jj = 0;
         if(cell[i][j] != nil){
             tempNeighbour[i][j-1]++;
             tempNeighbour[i-1][j]++;
             tempNeighbour[i-1][j-1]++;
+            if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner){
+                tempNeighbour[ii][j]++;
+                tempNeighbour[ii][j-1]++;
+            }
+            if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner2){
+                tempNeighbour[i][jj]++;
+                tempNeighbour[i-1][jj]++;
+            }
+            if(superViewController.evolveStyle == silverBessel){
+                tempNeighbour[ii][jj]++;
+            }
         }
         
+        //up right
         i = CELL_HMAX-1;
         j = 0;
+        ii = 0;
+        jj = CELL_VMAX-1;
         if(cell[i][j] != nil){
             tempNeighbour[i][j+1]++;
             tempNeighbour[i-1][j]++;
             tempNeighbour[i-1][j+1]++;
+            if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner){
+                tempNeighbour[ii][j]++;
+                tempNeighbour[ii][j+1]++;
+            }
+            if(superViewController.evolveStyle == silverBessel || superViewController.evolveStyle == silverCyliner2){
+                tempNeighbour[i][jj]++;
+                tempNeighbour[i-1][jj]++;
+            }
+            if(superViewController.evolveStyle == silverBessel){
+                tempNeighbour[ii][jj]++;
+            }
         }
     }
     
@@ -186,8 +281,8 @@
     UIColor * color;
     
     // Drawing process    
-    CGContextAddRect(context, CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
-    CGContextDrawPath(context, kCGPathFillStroke);
+//    CGContextAddRect(context, CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
+//    CGContextDrawPath(context, kCGPathFillStroke);
     // Draw Cells
     for (int i = 0; i <= CELL_HMAX-1; i++) {
         for (int j = 0; j <= CELL_VMAX-1; j++) {
@@ -210,14 +305,28 @@
     if (touchPoint.y > 0 && touchPoint.y < SCREEN_HEIGHT) {
         int x = touchPoint.x / CELL_SIZE;
         int y = touchPoint.y / CELL_SIZE;
-        cell[x][y] = [[Cell alloc] init];
+        if(cell[x][y] == nil){
+            cell[x][y] = [[Cell alloc] init];
+        }else{
+            [cell[x][y] release];
+            cell[x][y] = nil;
+        }
     }
     
     [self setNeedsDisplay];
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    [self touchesBegan:touches withEvent:event];
+    CGPoint touchPoint = [[touches anyObject] locationInView:self];
+    if (touchPoint.y > 0 && touchPoint.y < SCREEN_HEIGHT) {
+        int x = touchPoint.x / CELL_SIZE;
+        int y = touchPoint.y / CELL_SIZE;
+        if(cell[x][y] == nil){
+            cell[x][y] = [[Cell alloc] init];
+        }
+    }
+    
+    [self setNeedsDisplay];
 }
 
 //====== system ======

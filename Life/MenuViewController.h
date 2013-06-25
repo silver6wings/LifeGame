@@ -26,6 +26,7 @@
     IBOutlet UISwitch * birth8;
     
     IBOutlet UILabel * sliderLabel;
+    IBOutlet UISegmentedControl * segmentedCtrl;
 }
 
 @property (nonatomic,retain) LifeViewController * superViewController;
@@ -51,8 +52,10 @@
 @property (nonatomic,retain) UISwitch * birth8;
 
 @property (nonatomic,retain) UILabel * sliderLabel;
+@property (nonatomic,retain) UISegmentedControl * segmentedCtrl;
 
 -(void) refresh;
+-(IBAction) segmentedCtrlChanged:(id)sender;
 -(IBAction) sliderChanged:(id)sender;
 -(IBAction) switchChanged:(id)sender;
 

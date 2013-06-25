@@ -26,6 +26,7 @@
 @synthesize birth8;
 
 @synthesize sliderLabel;
+@synthesize segmentedCtrl;
 
 -(void)refresh{
     if (self.superViewController.isKilled0) [killed0 setOn:YES];
@@ -48,6 +49,13 @@
     if (self.superViewController.isBirth7) [birth7 setOn:YES];
     if (self.superViewController.isBirth8) [birth8 setOn:YES];
     
+    [self.segmentedCtrl setSelectedSegmentIndex:self.superViewController.evolveStyle];
+}
+
+-(IBAction) segmentedCtrlChanged:(id)sender{
+    UISegmentedControl * control = sender;
+    NSInteger index = [control selectedSegmentIndex];
+    superViewController.evolveStyle = index;
 }
 
 -(IBAction) sliderChanged:(id)sender{

@@ -1,9 +1,11 @@
+#import "Constant.h"
 #import "LifeViewController.h"
 #import "LifeView.h"
 #import "MenuViewController.h"
 
 @implementation LifeViewController
 
+@synthesize evolveStyle;
 @synthesize evolveInterval;
 @synthesize isMenuOpen;
 
@@ -39,14 +41,14 @@
     }
     
     if(isMenuOpen == NO){
-        [self.view insertSubview:menuViewController.view atIndex:0];
-        isMenuOpen = YES;
-        self.barMenu.title = @"Hide Menu";
         [menuViewController refresh];
+        [self.view insertSubview:menuViewController.view atIndex:0];
+        self.barMenu.title = @"Hide Menu";
+        isMenuOpen = YES;
     }else{
         [menuViewController.view removeFromSuperview];
-        isMenuOpen = NO;
         self.barMenu.title = @"Show Menu";
+        isMenuOpen = NO;
     }   
 }
 
@@ -62,6 +64,7 @@
 }
 
 - (void)viewDidLoad{
+    self.evolveStyle = silver2DPlane;
     self.evolveInterval = 0.05;
     self.isMenuOpen = NO;
     

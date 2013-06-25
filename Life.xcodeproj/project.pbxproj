@@ -96,6 +96,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19A8AB3A1394A2D300134729 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				586DED281346BBA800496CA8 /* Life-Info.plist */,
+				586DED291346BBA800496CA8 /* InfoPlist.strings */,
+				586DED2C1346BBA800496CA8 /* Life-Prefix.pch */,
+				586DED321346BBA800496CA8 /* MainWindow.xib */,
+				586DED381346BBA800496CA8 /* LifeViewController.xib */,
+				184343651382A10C00DA9EFB /* MenuViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		586DED111346BBA800496CA8 = {
 			isa = PBXGroup;
 			children = (
@@ -128,36 +141,23 @@
 		586DED261346BBA800496CA8 /* Life */ = {
 			isa = PBXGroup;
 			children = (
+				586DED2D1346BBA800496CA8 /* main.m */,
+				19A8AB3A1394A2D300134729 /* Resources */,
 				5852C5471346CC2D00EC6082 /* Constant.h */,
 				586DED591346BBD200496CA8 /* UIColor-Random.h */,
 				586DED5A1346BBD200496CA8 /* UIColor-Random.m */,
 				588EB7D21346E9EC001CFC8D /* Cell.h */,
 				588EB7D31346E9EC001CFC8D /* Cell.m */,
-				586DED271346BBA800496CA8 /* Supporting Files */,
-				586DED321346BBA800496CA8 /* MainWindow.xib */,
 				586DED2F1346BBA800496CA8 /* LifeAppDelegate.h */,
 				586DED301346BBA800496CA8 /* LifeAppDelegate.m */,
-				586DED381346BBA800496CA8 /* LifeViewController.xib */,
 				586DED351346BBA800496CA8 /* LifeViewController.h */,
 				586DED361346BBA800496CA8 /* LifeViewController.m */,
 				5852C5431346BED100EC6082 /* LifeView.h */,
 				5852C5441346BED100EC6082 /* LifeView.m */,
-				184343651382A10C00DA9EFB /* MenuViewController.xib */,
 				184343631382A10C00DA9EFB /* MenuViewController.h */,
 				184343641382A10C00DA9EFB /* MenuViewController.m */,
 			);
 			path = Life;
-			sourceTree = "<group>";
-		};
-		586DED271346BBA800496CA8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				586DED281346BBA800496CA8 /* Life-Info.plist */,
-				586DED291346BBA800496CA8 /* InfoPlist.strings */,
-				586DED2C1346BBA800496CA8 /* Life-Prefix.pch */,
-				586DED2D1346BBA800496CA8 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		586DED461346BBA800496CA8 /* LifeTests */ = {
@@ -386,12 +386,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Life/Life-Prefix.pch";
 				INFOPLIST_FILE = "Life/Life-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
