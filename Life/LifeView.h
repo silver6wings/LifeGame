@@ -8,14 +8,15 @@
     Cell * cell[CELL_HMAX][CELL_VMAX];    
     int generation;
     
-    LifeViewController * myViewController;
-    NSTimer * myTimer;
+    LifeViewController * superViewController;
+    NSTimer * lifeTimer;
 }
 
--(void)initSelfViewController:(LifeViewController *)lfvc;
+-(void) initSelfViewController:(LifeViewController *)lfvc;
 -(void) evolve;
 
 -(IBAction) barButtonClicked:(id)sender;
--(IBAction) barClearButtonClicked:(id)sender;
+-(IBAction) barClearClicked:(id)sender;
+
 
 @end

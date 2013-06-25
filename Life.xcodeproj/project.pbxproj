@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184343661382A10C00DA9EFB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184343641382A10C00DA9EFB /* MenuViewController.m */; };
+		184343671382A10C00DA9EFB /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184343651382A10C00DA9EFB /* MenuViewController.xib */; };
 		5852C5451346BED100EC6082 /* LifeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5852C5441346BED100EC6082 /* LifeView.m */; };
 		586DED211346BBA800496CA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586DED201346BBA800496CA8 /* UIKit.framework */; };
 		586DED231346BBA800496CA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586DED221346BBA800496CA8 /* Foundation.framework */; };
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		184343631382A10C00DA9EFB /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		184343641382A10C00DA9EFB /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		184343651382A10C00DA9EFB /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		5852C5431346BED100EC6082 /* LifeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeView.h; sourceTree = "<group>"; };
 		5852C5441346BED100EC6082 /* LifeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeView.m; sourceTree = "<group>"; };
 		5852C5471346CC2D00EC6082 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
@@ -123,20 +128,23 @@
 		586DED261346BBA800496CA8 /* Life */ = {
 			isa = PBXGroup;
 			children = (
-				586DED2F1346BBA800496CA8 /* LifeAppDelegate.h */,
-				586DED301346BBA800496CA8 /* LifeAppDelegate.m */,
-				586DED321346BBA800496CA8 /* MainWindow.xib */,
-				586DED381346BBA800496CA8 /* LifeViewController.xib */,
-				586DED271346BBA800496CA8 /* Supporting Files */,
 				5852C5471346CC2D00EC6082 /* Constant.h */,
-				586DED351346BBA800496CA8 /* LifeViewController.h */,
-				586DED361346BBA800496CA8 /* LifeViewController.m */,
-				5852C5431346BED100EC6082 /* LifeView.h */,
-				5852C5441346BED100EC6082 /* LifeView.m */,
 				586DED591346BBD200496CA8 /* UIColor-Random.h */,
 				586DED5A1346BBD200496CA8 /* UIColor-Random.m */,
 				588EB7D21346E9EC001CFC8D /* Cell.h */,
 				588EB7D31346E9EC001CFC8D /* Cell.m */,
+				586DED271346BBA800496CA8 /* Supporting Files */,
+				586DED321346BBA800496CA8 /* MainWindow.xib */,
+				586DED2F1346BBA800496CA8 /* LifeAppDelegate.h */,
+				586DED301346BBA800496CA8 /* LifeAppDelegate.m */,
+				586DED381346BBA800496CA8 /* LifeViewController.xib */,
+				586DED351346BBA800496CA8 /* LifeViewController.h */,
+				586DED361346BBA800496CA8 /* LifeViewController.m */,
+				5852C5431346BED100EC6082 /* LifeView.h */,
+				5852C5441346BED100EC6082 /* LifeView.m */,
+				184343651382A10C00DA9EFB /* MenuViewController.xib */,
+				184343631382A10C00DA9EFB /* MenuViewController.h */,
+				184343641382A10C00DA9EFB /* MenuViewController.m */,
 			);
 			path = Life;
 			sourceTree = "<group>";
@@ -242,6 +250,7 @@
 				586DED2B1346BBA800496CA8 /* InfoPlist.strings in Resources */,
 				586DED341346BBA800496CA8 /* MainWindow.xib in Resources */,
 				586DED3A1346BBA800496CA8 /* LifeViewController.xib in Resources */,
+				184343671382A10C00DA9EFB /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +292,7 @@
 				586DED5B1346BBD200496CA8 /* UIColor-Random.m in Sources */,
 				5852C5451346BED100EC6082 /* LifeView.m in Sources */,
 				588EB7D41346E9EC001CFC8D /* Cell.m in Sources */,
+				184343661382A10C00DA9EFB /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,4 +1,5 @@
 #import "LifeView.h"
+#import "LifeViewController.h"
 #import "UIColor-Random.h"
 
 @implementation LifeView
@@ -110,50 +111,67 @@
     // Move the next generation map back
     for (int i = 0; i <= CELL_HMAX-1; i++) {
         for (int j = 0; j <= CELL_VMAX-1; j++) {
-            //lonely to die or crowd to die
-            if (tempNeighbour[i][j] <= 1 || tempNeighbour[i][j] >= 4) {
-                [cell[i][j] release];
-                cell[i][j] = nil;
-            }
-            //born new cell
-            if(tempNeighbour[i][j] == 3 && cell[i][j] == nil){
-                cell[i][j] = [[Cell alloc] init];
-            }
+            if(cell[i][j] == nil){
+                //birth    
+                if(tempNeighbour[i][j] == 0 && superViewController.isBirth0){cell[i][j] = [[Cell alloc] init];}
+                if(tempNeighbour[i][j] == 1 && superViewController.isBirth1){cell[i][j] = [[Cell alloc] init];}
+                if(tempNeighbour[i][j] == 2 && superViewController.isBirth2){cell[i][j] = [[Cell alloc] init];}
+                if(tempNeighbour[i][j] == 3 && superViewController.isBirth3){cell[i][j] = [[Cell alloc] init];}
+                if(tempNeighbour[i][j] == 4 && superViewController.isBirth4){cell[i][j] = [[Cell alloc] init];}
+                if(tempNeighbour[i][j] == 5 && superViewController.isBirth5){cell[i][j] = [[Cell alloc] init];}
+                if(tempNeighbour[i][j] == 6 && superViewController.isBirth6){cell[i][j] = [[Cell alloc] init];}
+                if(tempNeighbour[i][j] == 7 && superViewController.isBirth7){cell[i][j] = [[Cell alloc] init];}
+                if(tempNeighbour[i][j] == 8 && superViewController.isBirth8){cell[i][j] = [[Cell alloc] init];}
+            }else{
+                //kill    
+                if(tempNeighbour[i][j] == 0 && superViewController.isKilled0){[cell[i][j] release];  cell[i][j] = nil;}
+                if(tempNeighbour[i][j] == 1 && superViewController.isKilled1){[cell[i][j] release];  cell[i][j] = nil;}
+                if(tempNeighbour[i][j] == 2 && superViewController.isKilled2){[cell[i][j] release];  cell[i][j] = nil;}
+                if(tempNeighbour[i][j] == 3 && superViewController.isKilled3){[cell[i][j] release];  cell[i][j] = nil;}
+                if(tempNeighbour[i][j] == 4 && superViewController.isKilled4){[cell[i][j] release];  cell[i][j] = nil;}
+                if(tempNeighbour[i][j] == 5 && superViewController.isKilled5){[cell[i][j] release];  cell[i][j] = nil;}
+                if(tempNeighbour[i][j] == 6 && superViewController.isKilled6){[cell[i][j] release];  cell[i][j] = nil;}
+                if(tempNeighbour[i][j] == 7 && superViewController.isKilled7){[cell[i][j] release];  cell[i][j] = nil;}
+                if(tempNeighbour[i][j] == 8 && superViewController.isKilled8){[cell[i][j] release];  cell[i][j] = nil;}               
+            }            
         }
     }
     
     generation++;
     NSString * tempString = [NSString stringWithFormat:@"%d",generation];
-    [myViewController.label setText:tempString];
+    [superViewController.label setText:tempString];
+    
     [self setNeedsDisplay];
 }
 
--(IBAction)barButtonClicked:(id)sender{ 
+-(IBAction) barButtonClicked:(id)sender{ 
     
     // Control Timer
-    if(myTimer == nil){
-        myTimer = [NSTimer scheduledTimerWithTimeInterval:EVOLVE_INTERVAL 
+    if(lifeTimer == nil){
+        lifeTimer = [NSTimer scheduledTimerWithTimeInterval:superViewController.evolveInterval
                                                    target:self
                                                  selector:@selector(evolve) 
                                                  userInfo:nil 
                                                   repeats:YES];
-        [[myViewController barButton]setTitle:@"Stop"];
+        [[superViewController barButton]setTitle:@"Stop"];
     }else{
-        if([myTimer isValid]){
-            [myTimer invalidate];
-            myTimer = nil;
+        if([lifeTimer isValid]){
+            [lifeTimer invalidate];
+            lifeTimer = nil;
         }
-        [[myViewController barButton]setTitle:@"Play"];
+        [[superViewController barButton]setTitle:@"Play"];
     }
 }
 
--(IBAction) barClearButtonClicked:(id)sender{
+-(IBAction) barClearClicked:(id)sender{
     for (int i = 0; i <= CELL_HMAX-1; i++){
         for (int j=0; j <= CELL_VMAX-1; j++){
             [cell[i][j] release];
             cell[i][j] = nil;
         }
     }
+    generation = 0;
+    [superViewController.label setText:@"0"];
     [self setNeedsDisplay];
 }
 
@@ -205,7 +223,7 @@
 //====== system ======
 
 -(void)initSelfViewController:(LifeViewController *)lfvc{
-    myViewController = lfvc;
+    superViewController = lfvc;
 }
 
 -(id)initWithCoder:(NSCoder *)coder{
@@ -215,7 +233,7 @@
         generation = 0;
         
         // Change button state
-        [[myViewController barButton]setTitle:@"Go"];
+        [[superViewController barButton]setTitle:@"Go"];
         
         for (int i = 0; i <= CELL_HMAX-1; i++) 
             for (int j=0; j <= CELL_VMAX-1; j++) 
@@ -239,7 +257,7 @@
         for (int j=0; j <= CELL_VMAX-1; j++)   
             [cell[i][j] release];
     
-    [myTimer invalidate];
+    [lifeTimer invalidate];
     [super dealloc];
 }
 
