@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'LifeTests' target in the 'LifeTests' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+#endif

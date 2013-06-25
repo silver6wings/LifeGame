@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5852C5451346BED100EC6082 /* LifeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5852C5441346BED100EC6082 /* LifeView.m */; };
+		586DED211346BBA800496CA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586DED201346BBA800496CA8 /* UIKit.framework */; };
+		586DED231346BBA800496CA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586DED221346BBA800496CA8 /* Foundation.framework */; };
+		586DED251346BBA800496CA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586DED241346BBA800496CA8 /* CoreGraphics.framework */; };
+		586DED2B1346BBA800496CA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 586DED291346BBA800496CA8 /* InfoPlist.strings */; };
+		586DED2E1346BBA800496CA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 586DED2D1346BBA800496CA8 /* main.m */; };
+		586DED311346BBA800496CA8 /* LifeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 586DED301346BBA800496CA8 /* LifeAppDelegate.m */; };
+		586DED341346BBA800496CA8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586DED321346BBA800496CA8 /* MainWindow.xib */; };
+		586DED371346BBA800496CA8 /* LifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586DED361346BBA800496CA8 /* LifeViewController.m */; };
+		586DED3A1346BBA800496CA8 /* LifeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 586DED381346BBA800496CA8 /* LifeViewController.xib */; };
+		586DED411346BBA800496CA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586DED201346BBA800496CA8 /* UIKit.framework */; };
+		586DED421346BBA800496CA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586DED221346BBA800496CA8 /* Foundation.framework */; };
+		586DED431346BBA800496CA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586DED241346BBA800496CA8 /* CoreGraphics.framework */; };
+		586DED4B1346BBA800496CA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 586DED491346BBA800496CA8 /* InfoPlist.strings */; };
+		586DED4E1346BBA800496CA8 /* LifeTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 586DED4D1346BBA800496CA8 /* LifeTests.h */; };
+		586DED501346BBA800496CA8 /* LifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 586DED4F1346BBA800496CA8 /* LifeTests.m */; };
+		586DED5B1346BBD200496CA8 /* UIColor-Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 586DED5A1346BBD200496CA8 /* UIColor-Random.m */; };
+		588EB7D41346E9EC001CFC8D /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 588EB7D31346E9EC001CFC8D /* Cell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		586DED441346BBA800496CA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 586DED131346BBA800496CA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 586DED1B1346BBA800496CA8;
+			remoteInfo = Life;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5852C5431346BED100EC6082 /* LifeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeView.h; sourceTree = "<group>"; };
+		5852C5441346BED100EC6082 /* LifeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeView.m; sourceTree = "<group>"; };
+		5852C5471346CC2D00EC6082 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		586DED1C1346BBA800496CA8 /* Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Life.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		586DED201346BBA800496CA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		586DED221346BBA800496CA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		586DED241346BBA800496CA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		586DED281346BBA800496CA8 /* Life-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Life-Info.plist"; sourceTree = "<group>"; };
+		586DED2A1346BBA800496CA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		586DED2C1346BBA800496CA8 /* Life-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Life-Prefix.pch"; sourceTree = "<group>"; };
+		586DED2D1346BBA800496CA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		586DED2F1346BBA800496CA8 /* LifeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeAppDelegate.h; sourceTree = "<group>"; };
+		586DED301346BBA800496CA8 /* LifeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeAppDelegate.m; sourceTree = "<group>"; };
+		586DED331346BBA800496CA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		586DED351346BBA800496CA8 /* LifeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeViewController.h; sourceTree = "<group>"; };
+		586DED361346BBA800496CA8 /* LifeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeViewController.m; sourceTree = "<group>"; };
+		586DED391346BBA800496CA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LifeViewController.xib; sourceTree = "<group>"; };
+		586DED401346BBA800496CA8 /* LifeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		586DED481346BBA800496CA8 /* LifeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LifeTests-Info.plist"; sourceTree = "<group>"; };
+		586DED4A1346BBA800496CA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		586DED4C1346BBA800496CA8 /* LifeTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LifeTests-Prefix.pch"; sourceTree = "<group>"; };
+		586DED4D1346BBA800496CA8 /* LifeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LifeTests.h; sourceTree = "<group>"; };
+		586DED4F1346BBA800496CA8 /* LifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeTests.m; sourceTree = "<group>"; };
+		586DED591346BBD200496CA8 /* UIColor-Random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-Random.h"; sourceTree = "<group>"; };
+		586DED5A1346BBD200496CA8 /* UIColor-Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-Random.m"; sourceTree = "<group>"; };
+		588EB7D21346E9EC001CFC8D /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		588EB7D31346E9EC001CFC8D /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		586DED191346BBA800496CA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586DED211346BBA800496CA8 /* UIKit.framework in Frameworks */,
+				586DED231346BBA800496CA8 /* Foundation.framework in Frameworks */,
+				586DED251346BBA800496CA8 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		586DED3C1346BBA800496CA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586DED411346BBA800496CA8 /* UIKit.framework in Frameworks */,
+				586DED421346BBA800496CA8 /* Foundation.framework in Frameworks */,
+				586DED431346BBA800496CA8 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		586DED111346BBA800496CA8 = {
+			isa = PBXGroup;
+			children = (
+				586DED261346BBA800496CA8 /* Life */,
+				586DED461346BBA800496CA8 /* LifeTests */,
+				586DED1F1346BBA800496CA8 /* Frameworks */,
+				586DED1D1346BBA800496CA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		586DED1D1346BBA800496CA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				586DED1C1346BBA800496CA8 /* Life.app */,
+				586DED401346BBA800496CA8 /* LifeTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		586DED1F1346BBA800496CA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				586DED201346BBA800496CA8 /* UIKit.framework */,
+				586DED221346BBA800496CA8 /* Foundation.framework */,
+				586DED241346BBA800496CA8 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		586DED261346BBA800496CA8 /* Life */ = {
+			isa = PBXGroup;
+			children = (
+				5852C5471346CC2D00EC6082 /* Constant.h */,
+				586DED321346BBA800496CA8 /* MainWindow.xib */,
+				586DED381346BBA800496CA8 /* LifeViewController.xib */,
+				586DED2F1346BBA800496CA8 /* LifeAppDelegate.h */,
+				586DED301346BBA800496CA8 /* LifeAppDelegate.m */,
+				586DED351346BBA800496CA8 /* LifeViewController.h */,
+				586DED361346BBA800496CA8 /* LifeViewController.m */,
+				5852C5431346BED100EC6082 /* LifeView.h */,
+				5852C5441346BED100EC6082 /* LifeView.m */,
+				586DED591346BBD200496CA8 /* UIColor-Random.h */,
+				586DED5A1346BBD200496CA8 /* UIColor-Random.m */,
+				588EB7D21346E9EC001CFC8D /* Cell.h */,
+				588EB7D31346E9EC001CFC8D /* Cell.m */,
+				586DED271346BBA800496CA8 /* Supporting Files */,
+			);
+			path = Life;
+			sourceTree = "<group>";
+		};
+		586DED271346BBA800496CA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				586DED281346BBA800496CA8 /* Life-Info.plist */,
+				586DED291346BBA800496CA8 /* InfoPlist.strings */,
+				586DED2C1346BBA800496CA8 /* Life-Prefix.pch */,
+				586DED2D1346BBA800496CA8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		586DED461346BBA800496CA8 /* LifeTests */ = {
+			isa = PBXGroup;
+			children = (
+				586DED4D1346BBA800496CA8 /* LifeTests.h */,
+				586DED4F1346BBA800496CA8 /* LifeTests.m */,
+				586DED471346BBA800496CA8 /* Supporting Files */,
+			);
+			path = LifeTests;
+			sourceTree = "<group>";
+		};
+		586DED471346BBA800496CA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				586DED481346BBA800496CA8 /* LifeTests-Info.plist */,
+				586DED491346BBA800496CA8 /* InfoPlist.strings */,
+				586DED4C1346BBA800496CA8 /* LifeTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		586DED1B1346BBA800496CA8 /* Life */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 586DED531346BBA800496CA8 /* Build configuration list for PBXNativeTarget "Life" */;
+			buildPhases = (
+				586DED181346BBA800496CA8 /* Sources */,
+				586DED191346BBA800496CA8 /* Frameworks */,
+				586DED1A1346BBA800496CA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Life;
+			productName = Life;
+			productReference = 586DED1C1346BBA800496CA8 /* Life.app */;
+			productType = "com.apple.product-type.application";
+		};
+		586DED3F1346BBA800496CA8 /* LifeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 586DED561346BBA800496CA8 /* Build configuration list for PBXNativeTarget "LifeTests" */;
+			buildPhases = (
+				586DED3B1346BBA800496CA8 /* Sources */,
+				586DED3C1346BBA800496CA8 /* Frameworks */,
+				586DED3D1346BBA800496CA8 /* Resources */,
+				586DED3E1346BBA800496CA8 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				586DED451346BBA800496CA8 /* PBXTargetDependency */,
+			);
+			name = LifeTests;
+			productName = LifeTests;
+			productReference = 586DED401346BBA800496CA8 /* LifeTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		586DED131346BBA800496CA8 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 586DED161346BBA800496CA8 /* Build configuration list for PBXProject "Life" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 586DED111346BBA800496CA8;
+			productRefGroup = 586DED1D1346BBA800496CA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				586DED1B1346BBA800496CA8 /* Life */,
+				586DED3F1346BBA800496CA8 /* LifeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		586DED1A1346BBA800496CA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586DED2B1346BBA800496CA8 /* InfoPlist.strings in Resources */,
+				586DED341346BBA800496CA8 /* MainWindow.xib in Resources */,
+				586DED3A1346BBA800496CA8 /* LifeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		586DED3D1346BBA800496CA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586DED4B1346BBA800496CA8 /* InfoPlist.strings in Resources */,
+				586DED4E1346BBA800496CA8 /* LifeTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		586DED3E1346BBA800496CA8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		586DED181346BBA800496CA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586DED2E1346BBA800496CA8 /* main.m in Sources */,
+				586DED311346BBA800496CA8 /* LifeAppDelegate.m in Sources */,
+				586DED371346BBA800496CA8 /* LifeViewController.m in Sources */,
+				586DED5B1346BBD200496CA8 /* UIColor-Random.m in Sources */,
+				5852C5451346BED100EC6082 /* LifeView.m in Sources */,
+				588EB7D41346E9EC001CFC8D /* Cell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		586DED3B1346BBA800496CA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586DED501346BBA800496CA8 /* LifeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		586DED451346BBA800496CA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 586DED1B1346BBA800496CA8 /* Life */;
+			targetProxy = 586DED441346BBA800496CA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		586DED291346BBA800496CA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				586DED2A1346BBA800496CA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		586DED321346BBA800496CA8 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				586DED331346BBA800496CA8 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		586DED381346BBA800496CA8 /* LifeViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				586DED391346BBA800496CA8 /* en */,
+			);
+			name = LifeViewController.xib;
+			sourceTree = "<group>";
+		};
+		586DED491346BBA800496CA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				586DED4A1346BBA800496CA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		586DED511346BBA800496CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		586DED521346BBA800496CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		586DED541346BBA800496CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Life/Life-Prefix.pch";
+				INFOPLIST_FILE = "Life/Life-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		586DED551346BBA800496CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Life/Life-Prefix.pch";
+				INFOPLIST_FILE = "Life/Life-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		586DED571346BBA800496CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Life.app/Life";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifeTests/LifeTests-Prefix.pch";
+				INFOPLIST_FILE = "LifeTests/LifeTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		586DED581346BBA800496CA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Life.app/Life";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LifeTests/LifeTests-Prefix.pch";
+				INFOPLIST_FILE = "LifeTests/LifeTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		586DED161346BBA800496CA8 /* Build configuration list for PBXProject "Life" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				586DED511346BBA800496CA8 /* Debug */,
+				586DED521346BBA800496CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		586DED531346BBA800496CA8 /* Build configuration list for PBXNativeTarget "Life" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				586DED541346BBA800496CA8 /* Debug */,
+				586DED551346BBA800496CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		586DED561346BBA800496CA8 /* Build configuration list for PBXNativeTarget "LifeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				586DED571346BBA800496CA8 /* Debug */,
+				586DED581346BBA800496CA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 586DED131346BBA800496CA8 /* Project object */;
+}
