@@ -4,6 +4,7 @@
 @implementation LifeViewController
 
 @synthesize barButton;
+@synthesize label;
 
 -(IBAction) barButtonClick:(id)sender{
     LifeView * lfView = (LifeView *)[self view];
@@ -21,7 +22,9 @@
 }
 
 - (void)viewDidLoad{
-    [barButton setTitle:@"Go"];
+    LifeView * tempView = (LifeView *)self.view;
+    [tempView initSelfViewController:self];
+    
     [super viewDidLoad];
 }
 

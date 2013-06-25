@@ -123,11 +123,12 @@
 		586DED261346BBA800496CA8 /* Life */ = {
 			isa = PBXGroup;
 			children = (
-				5852C5471346CC2D00EC6082 /* Constant.h */,
-				586DED321346BBA800496CA8 /* MainWindow.xib */,
-				586DED381346BBA800496CA8 /* LifeViewController.xib */,
 				586DED2F1346BBA800496CA8 /* LifeAppDelegate.h */,
 				586DED301346BBA800496CA8 /* LifeAppDelegate.m */,
+				586DED321346BBA800496CA8 /* MainWindow.xib */,
+				586DED381346BBA800496CA8 /* LifeViewController.xib */,
+				586DED271346BBA800496CA8 /* Supporting Files */,
+				5852C5471346CC2D00EC6082 /* Constant.h */,
 				586DED351346BBA800496CA8 /* LifeViewController.h */,
 				586DED361346BBA800496CA8 /* LifeViewController.m */,
 				5852C5431346BED100EC6082 /* LifeView.h */,
@@ -136,7 +137,6 @@
 				586DED5A1346BBD200496CA8 /* UIColor-Random.m */,
 				588EB7D21346E9EC001CFC8D /* Cell.h */,
 				588EB7D31346E9EC001CFC8D /* Cell.m */,
-				586DED271346BBA800496CA8 /* Supporting Files */,
 			);
 			path = Life;
 			sourceTree = "<group>";

@@ -4,38 +4,131 @@
 @implementation LifeView
 
 -(void)evolve{
-    Cell * tempCell[CELL_HMAX][CELL_VMAX];
     
     // Simulate the next evolve
+    
+    int tempNeighbour[CELL_HMAX][CELL_VMAX];
+    
+    // All init to 0
     for (int i = 0; i <= CELL_HMAX-1; i++) {
-        tempCell[i][0] = cell[i][CELL_VMAX-1];
-        for (int j = 1; j <= CELL_VMAX-1; j++) {
-            tempCell[i][j] = cell[i][j-1];
+        for (int j = 0; j <= CELL_VMAX-1; j++) {
+            tempNeighbour[i][j] = 0;
         }
     }
     
+    //Cell inside
+    for (int i = 1; i <= CELL_HMAX-2; i++) {
+        for (int j = 1; j <= CELL_VMAX-2; j++) {
+            if (cell[i][j] != nil) {
+                tempNeighbour[i+1][j]++;
+                tempNeighbour[i-1][j]++;
+                tempNeighbour[i][j+1]++;
+                tempNeighbour[i][j-1]++;
+                tempNeighbour[i+1][j+1]++;
+                tempNeighbour[i+1][j-1]++;
+                tempNeighbour[i-1][j+1]++;
+                tempNeighbour[i-1][j-1]++;            
+            }
+        }
+    }
+    
+    //Cell left right side
+    {
+        int j;
+        for (int i = 1; i <= CELL_HMAX-2; i++) {
+            j = 0;
+            if (cell[i][j] != nil) {
+                tempNeighbour[i][j+1]++;
+                tempNeighbour[i-1][j+1]++;
+                tempNeighbour[i+1][j+1]++;
+            }
+            j = CELL_VMAX-1;
+            if (cell[i][j] != nil) {
+                tempNeighbour[i][j-1]++;
+                tempNeighbour[i-1][j-1]++;
+                tempNeighbour[i+1][j-1]++;
+            }
+        }
+    }
+    
+    //Cell up down side
+    {
+        int i;
+        for (int j = 1; j <= CELL_VMAX-2; j++) {
+            i = 0;
+            if (cell[i][j] != nil) {
+                tempNeighbour[i+1][j]++;
+                tempNeighbour[i+1][j+1]++;
+                tempNeighbour[i+1][j-1]++;
+            }
+            i = CELL_HMAX-1;
+            if (cell[i][j] != nil) {
+                tempNeighbour[i-1][j]++;
+                tempNeighbour[i-1][j+1]++;
+                tempNeighbour[i-1][j-1]++;
+            }
+        }
+    }
+    
+    //Cell at 4 corner
+    {
+        int i = 0;
+        int j = 0;
+        if(cell[i][j] != nil){
+            tempNeighbour[i][j+1]++;
+            tempNeighbour[i+1][j]++;
+            tempNeighbour[i+1][j+1]++;
+        }
+        
+        i = 0;
+        j = CELL_VMAX-1;
+        if(cell[i][j] != nil){
+            tempNeighbour[i][j-1]++;
+            tempNeighbour[i+1][j]++;
+            tempNeighbour[i+1][j-1]++;
+        }
+        
+        i = CELL_HMAX-1;
+        j = CELL_VMAX-1;
+        if(cell[i][j] != nil){
+            tempNeighbour[i][j-1]++;
+            tempNeighbour[i-1][j]++;
+            tempNeighbour[i-1][j-1]++;
+        }
+        
+        i = CELL_HMAX-1;
+        j = 0;
+        if(cell[i][j] != nil){
+            tempNeighbour[i][j+1]++;
+            tempNeighbour[i-1][j]++;
+            tempNeighbour[i-1][j+1]++;
+        }
+    }
+    
+    // * Finish Neighbour Search
     
     // Move the next generation map back
     for (int i = 0; i <= CELL_HMAX-1; i++) {
         for (int j = 0; j <= CELL_VMAX-1; j++) {
-            cell[i][j] = tempCell[i][j];
+            //lonely to die or crowd to die
+            if (tempNeighbour[i][j] <= 1 || tempNeighbour[i][j] >= 4) {
+                [cell[i][j] release];
+                cell[i][j] = nil;
+            }
+            //born new cell
+            if(tempNeighbour[i][j] == 3 && cell[i][j] == nil){
+                cell[i][j] = [[Cell alloc] init];
+            }
         }
     }
     
-    // Show generation at Console
-    printf("%d ",generation);
     generation++;
-    
-    // Draw map
+    NSString * tempString = [NSString stringWithFormat:@"%d",generation];
+    [myViewController.label setText:tempString];
     [self setNeedsDisplay];
 }
 
--(IBAction)barButtonClicked:(id)sender{
-    
-    // Change button state
-    LifeViewController * lfvc = (LifeViewController * )sender;
-        
-    
+-(IBAction)barButtonClicked:(id)sender{ 
     
     // Control Timer
     if(myTimer == nil){
@@ -44,57 +137,29 @@
                                                  selector:@selector(evolve) 
                                                  userInfo:nil 
                                                   repeats:YES];
-        [[lfvc barButton]setTitle:@"Pause"];
+        [[myViewController barButton]setTitle:@"Stop"];
     }else{
         if([myTimer isValid]){
             [myTimer invalidate];
             myTimer = nil;
         }
-        [[lfvc barButton]setTitle:@"Play"];
+        [[myViewController barButton]setTitle:@"Play"];
     }
-    
-    
 }
 
-//====== system ======
-
--(id)initWithCoder:(NSCoder *)coder{
-    self = [super initWithCoder:coder];
-    if (self) {    
-        for (int i = 0; i <= CELL_HMAX-1; i++) {
-            for (int j=0; j <= CELL_VMAX-1; j++) {
-                cell[i][j] = [[Cell alloc] init];
-            }
-        }
-    }            
-    NSLog(@"%d",generation);
-    generation = 0;
-    
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
-    if (self) {
-    }
-    return self;
-    NSLog(@"LifeView initWithFrame");
-}
-
-
-
-- (void)dealloc{
-    for (int i = 0; i <= CELL_HMAX-1; i++) {
-        for (int j=0; j <= CELL_VMAX-1; j++) {
+-(IBAction) barClearButtonClicked:(id)sender{
+    for (int i = 0; i <= CELL_HMAX-1; i++){
+        for (int j=0; j <= CELL_VMAX-1; j++){
             [cell[i][j] release];
+            cell[i][j] = nil;
         }
     }
-    [myTimer invalidate];
-    [super dealloc];
+    [self setNeedsDisplay];
 }
 
-//====== event ======
 
+
+//====== draw process ======
 
 -(void)drawRect:(CGRect)rect{
     CGContextRef context = UIGraphicsGetCurrentContext();        
@@ -102,31 +167,80 @@
     
     UIColor * color;
     
-    // Drawing process
+    // Drawing process    
+    CGContextAddRect(context, CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT));
+    CGContextDrawPath(context, kCGPathFillStroke);
+    // Draw Cells
     for (int i = 0; i <= CELL_HMAX-1; i++) {
-        for (int j = 0; j <= CELL_VMAX-4; j++) {
-            if(cell[i][j].alive == YES){
+        for (int j = 0; j <= CELL_VMAX-1; j++) {
+            if(cell[i][j] != nil){
                 color = cell[i][j].color;
                 CGContextSetStrokeColorWithColor(context, color.CGColor);
                 CGContextSetFillColorWithColor(context, color.CGColor);
-                CGContextAddEllipseInRect(context, CGRectMake(i*CELL_SIZE+1, j*CELL_SIZE+1, CELL_SIZE-2, CELL_SIZE-2));
+                CGContextAddEllipseInRect(context, CGRectMake(i*CELL_SIZE, j*CELL_SIZE, CELL_SIZE-1, CELL_SIZE-1));
                 CGContextDrawPath(context, kCGPathFillStroke);
             }
         }
     }
+    
 }
+
+//====== event ======
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     CGPoint touchPoint = [[touches anyObject] locationInView:self];
-    int x = touchPoint.x / CELL_SIZE;
-    int y = touchPoint.y / CELL_SIZE;
-    cell[x][y].alive = YES;
+    if (touchPoint.y > 0 && touchPoint.y < SCREEN_HEIGHT) {
+        int x = touchPoint.x / CELL_SIZE;
+        int y = touchPoint.y / CELL_SIZE;
+        cell[x][y] = [[Cell alloc] init];
+    }
     
     [self setNeedsDisplay];
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     [self touchesBegan:touches withEvent:event];
+}
+
+//====== system ======
+
+-(void)initSelfViewController:(LifeViewController *)lfvc{
+    myViewController = lfvc;
+}
+
+-(id)initWithCoder:(NSCoder *)coder{
+    //Initlization
+    self = [super initWithCoder:coder];
+    if (self) {    
+        generation = 0;
+        
+        // Change button state
+        [[myViewController barButton]setTitle:@"Go"];
+        
+        for (int i = 0; i <= CELL_HMAX-1; i++) 
+            for (int j=0; j <= CELL_VMAX-1; j++) 
+                cell[i][j] = nil;
+    }            
+    
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    if (self) {}
+    return self;
+    NSLog(@"LifeView initWithFrame");
+}
+
+
+
+- (void)dealloc{
+    for (int i = 0; i <= CELL_HMAX-1; i++) 
+        for (int j=0; j <= CELL_VMAX-1; j++)   
+            [cell[i][j] release];
+    
+    [myTimer invalidate];
+    [super dealloc];
 }
 
 @end
