@@ -3,15 +3,11 @@
 
 @implementation UIColor(Random)
 
-+(UIColor *)randomColor{
-    static BOOL seeded = NO;
-    if(!seeded){
-        srandom(time(NULL));
-        seeded = YES;
-    }
-    CGFloat red = (CGFloat)random()/(CGFloat)RAND_MAX;
-    CGFloat blue = (CGFloat)random()/(CGFloat)RAND_MAX;
-    CGFloat green = (CGFloat)random()/(CGFloat)RAND_MAX;
++(UIColor *)randomColor
+{
+    CGFloat red = (arc4random()%100)/100.0f;
+    CGFloat blue = (arc4random()%100)/100.0f;
+    CGFloat green = (arc4random()%100)/100.0f;
     
     return [UIColor colorWithRed:red 
                            green:green 

@@ -7,7 +7,6 @@
 -(void)evolve{
     
     // Simulate the next evolve
-    
     int tempNeighbour[CELL_HMAX][CELL_VMAX];
     
     // All init to 0

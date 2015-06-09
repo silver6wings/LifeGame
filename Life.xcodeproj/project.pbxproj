@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		184343661382A10C00DA9EFB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184343641382A10C00DA9EFB /* MenuViewController.m */; };
 		184343671382A10C00DA9EFB /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184343651382A10C00DA9EFB /* MenuViewController.xib */; };
+		19AA52291B273199002DCFD9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19AA52281B273199002DCFD9 /* Default-568h@2x.png */; };
 		5852C5451346BED100EC6082 /* LifeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5852C5441346BED100EC6082 /* LifeView.m */; };
 		586DED211346BBA800496CA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586DED201346BBA800496CA8 /* UIKit.framework */; };
 		586DED231346BBA800496CA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586DED221346BBA800496CA8 /* Foundation.framework */; };
@@ -43,6 +44,7 @@
 		184343631382A10C00DA9EFB /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		184343641382A10C00DA9EFB /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		184343651382A10C00DA9EFB /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		19AA52281B273199002DCFD9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5852C5431346BED100EC6082 /* LifeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeView.h; sourceTree = "<group>"; };
 		5852C5441346BED100EC6082 /* LifeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeView.m; sourceTree = "<group>"; };
 		5852C5471346CC2D00EC6082 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		586DED111346BBA800496CA8 = {
 			isa = PBXGroup;
 			children = (
+				19AA52281B273199002DCFD9 /* Default-568h@2x.png */,
 				586DED261346BBA800496CA8 /* Life */,
 				586DED461346BBA800496CA8 /* LifeTests */,
 				586DED1F1346BBA800496CA8 /* Frameworks */,
@@ -217,13 +220,16 @@
 			name = LifeTests;
 			productName = LifeTests;
 			productReference = 586DED401346BBA800496CA8 /* LifeTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		586DED131346BBA800496CA8 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+			};
 			buildConfigurationList = 586DED161346BBA800496CA8 /* Build configuration list for PBXProject "Life" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -250,6 +256,7 @@
 				586DED2B1346BBA800496CA8 /* InfoPlist.strings in Resources */,
 				586DED341346BBA800496CA8 /* MainWindow.xib in Resources */,
 				586DED3A1346BBA800496CA8 /* LifeViewController.xib in Resources */,
+				19AA52291B273199002DCFD9 /* Default-568h@2x.png in Resources */,
 				184343671382A10C00DA9EFB /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +360,6 @@
 		586DED511346BBA800496CA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -363,6 +369,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -370,7 +377,6 @@
 		586DED521346BBA800496CA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -390,6 +396,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Life/Life-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Life/Life-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
@@ -404,6 +411,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Life/Life-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Life/Life-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
@@ -422,6 +430,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LifeTests/LifeTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LifeTests/LifeTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -444,6 +453,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LifeTests/LifeTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LifeTests/LifeTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
